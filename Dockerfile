@@ -5,7 +5,7 @@ WORKDIR /usr/src
 RUN git clone https://github.com/adqio/python-confluent-schemaregistry.git && cd python-confluent-schemaregistry && python setup.py bdist_egg && cp dist/*.egg /usr/src/enricher/
 RUN git clone https://github.com/dpkp/kafka-python.git && cd kafka-python && python setup.py bdist_egg && cp dist/*.egg /usr/src/enricher/
 RUN git clone https://github.com/tebeka/fastavro.git && cd fastavro && python setup.py bdist_egg && cp dist/*.egg /usr/src/enricher/ 
-RUN cd /tmp && git clone https://adqdeploy:7e2589f6a3efc3316788f4759b0ec2efd8945552@github.com/adqio/rd.git 
+RUN cd /tmp && git clone https://adqdeploy:05dca6a7a7757481b3fe086af90b8323e875ae6b@github.com/adqio/rd.git 
 RUN apt-get -y update && apt-get -y install software-properties-common curl && curl -s http://d3kbcqa49mib13.cloudfront.net/spark-1.6.0-bin-hadoop2.4.tgz | tar -xz -C /usr/local/
 RUN echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | debconf-set-selections && \
   add-apt-repository -y ppa:webupd8team/java && \
